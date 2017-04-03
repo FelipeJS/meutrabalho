@@ -6,13 +6,15 @@ import 'rxjs/Rx';
 export class PessoaFisicaService{
     http: any;
     baseUrl: String;
+    homolocacao: String;
 
     constructor(http: Http){
         this.http = http;
-        this.baseUrl = 'http://192.168.25.3/pessoaFisica/';
+        this.baseUrl = 'http://meutrabalho.com.br/servicos/pessoaFisica/';
+        this.homolocacao = 'http://192.168.25.3/pessoaFisica/'; 
     }
 
     getPessoaFisica(operacao){
-        return this.http.get(this.baseUrl + operacao).map(res => res.json());
+        return this.http.get(this.homolocacao + operacao).map(res => res.json());
     }
 }

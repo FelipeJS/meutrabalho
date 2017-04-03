@@ -9,8 +9,9 @@ import { PessoaFisicaDetails } from '../pessoaFisicaDetails/pessoaFisicaDetails'
 })
 export class PessoaFisica {
 
-  items: any[];
-
+  items = [];
+  categoria: any;
+  
   constructor(public navCtrl: NavController, private pessoaFisicaService: PessoaFisicaService) {
     
   }
@@ -30,6 +31,10 @@ export class PessoaFisica {
     this.navCtrl.push(PessoaFisicaDetails, {
       item:item
     });
+  }
+
+  alterarCategoria(){
+    this.getPessoaFisica('listar');
   }
 
 }

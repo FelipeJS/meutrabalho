@@ -14,12 +14,23 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Categoria</ion-label>
+      <ion-select (ionChange)="alterarCategoria()" [(ngModel)]="categoria" name="categoria">
+        <ion-option value="Transporte">Transporte</ion-option>
+        <ion-option value="Tecnologia">Tecnologia</ion-option>
+        <ion-option value="Faturamento">Faturamento</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
   <ion-card *ngFor="let item of items" color="light" (click)="viewItem(item)">
     <ion-card-content>  
-    <h2>{{item.nmUsuario}}</h2>
-    <h3>{{item.dsEmail}}</h3>
-    <p>{{item.dsCidade}} {{item.dsEstado}}</p>
-    <p>meutrabalho.com.br</p>
+      <h2>{{item.nmUsuario}}</h2>
+      <h3>{{item.dsEmail}}</h3>
+      <p>{{item.dsCidade}} {{item.dsEstado}}</p>
+      <p>meutrabalho.com.br</p>
     </ion-card-content>
     <ion-row>
       <ion-col>
@@ -34,7 +45,7 @@
           <div>4 Comments</div>
         </button>
       </ion-col>
-      
     </ion-row>
   </ion-card>
+
 </ion-content>
